@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>YouTube</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f6f6f6;
+            color: #000;
+        }
+
+        /* TOPO */
+        .header {
+            background: linear-gradient(#ffffff, #e5e5e5);
+            border-bottom: 1px solid #ccc;
+            padding: 10px 20px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #cc0000;
+            display: inline-block;
+        }
+
+        .logo span {
+            color: #000;
+        }
+
+        .user-area {
+            float: right;
+            font-size: 12px;
+            margin-top: 6px;
+        }
+
+        .user-area a {
+            color: #0033cc;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+        .user-area a:hover {
+            text-decoration: underline;
+        }
+
+        /* CONTEÚDO */
+        .container {
+            width: 900px;
+            margin: 20px auto;
+            background: #fff;
+            border: 1px solid #ccc;
+            padding: 15px;
+        }
+
+        .video-item {
+            display: flex;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .video-item:last-child {
+            border-bottom: none;
+        }
+
+        .thumb {
+            width: 120px;
+            height: 90px;
+            margin-right: 10px;
+        }
+
+        .thumb img {
+            width: 120px;
+            height: 90px;
+            object-fit: cover;
+            border: 1px solid #000;
+        }
+
+        .video-info {
+            font-size: 13px;
+        }
+
+        .video-info .title {
+            color: #0033cc;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .video-info .title:hover {
+            text-decoration: underline;
+        }
+
+        .descricao {
+            margin-top: 5px;
+            color: #555;
+            font-size: 12px;
+        }
+
+        .channel {
+            margin-top: 4px;
+            font-size: 11px;
+            color: #666;
+        }
+
+        .channel a {
+            color: #0033cc;
+            text-decoration: none;
+        }
+
+        .channel a:hover {
+            text-decoration: underline;
+        }
+
+        /* RODAPÉ */
+        .footer {
+            text-align: center;
+            font-size: 11px;
+            color: #666;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="logo">
+            You<span>Tube</span>
+        </div>
+
+        <div class="user-area">
+            {{ user }}
+            <a href="/channel/{{ user }}">meu canal</a>
+            <a href="/addVideo">adicionar vídeo</a>
+            <a href="/logout">sair</a>
+        </div>
+
+        <div style="clear: both;"></div>
+    </div>
+
+    <div class="container">
+
+        {% for x in conteudos %}
+        <div class="video-item">
+
+            <div class="thumb">
+                <a href="/video/{{ x[0] }}">
+                    <img src="{{ x[1] }}">
+                </a>
+            </div>
+
+            <div class="video-info">
+
+                <a class="title" href="/video/{{ x[0] }}">
+                    {{ x[2] }}
+                </a>
+
+                {% if x[3] %}
+                <div class="descricao">
+                    {{ x[3] }}
+                </div>
+                {% endif %}
+
+                <div class="channel">
+                    enviado por
+                    <a href="/channel/{{ x[5] }}">
+                        {{ x[5] }}
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+
+    <div class="footer">
+        © 2009 YouTube, LLC
+    </div>
+
+</body>
+</html>

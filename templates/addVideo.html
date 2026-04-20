@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload de vídeo - YouTube</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f6f6f6;
+        }
+
+        /* TOPO */
+        .header {
+            background: linear-gradient(#ffffff, #e5e5e5);
+            border-bottom: 1px solid #ccc;
+            padding: 10px 20px;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #cc0000;
+        }
+
+        .logo span {
+            color: #000;
+        }
+
+        /* CONTEÚDO */
+        .container {
+            width: 600px;
+            margin: 30px auto;
+            background: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+
+        .titulo {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            margin-bottom: 3px;
+        }
+
+        input {
+            width: 98%;
+            padding: 5px;
+            font-size: 13px;
+            border: 1px solid #999;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 6px 15px;
+            font-size: 13px;
+            border: 1px solid #666;
+            background: linear-gradient(#fefefe, #dcdcdc);
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: linear-gradient(#ffffff, #cfcfcf);
+        }
+
+        /* RODAPÉ */
+        .footer {
+            text-align: center;
+            font-size: 11px;
+            color: #666;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="logo">
+            You<span>Tube</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="titulo">Adicionar novo vídeo</div>
+
+        <form method="POST">
+            <div class="form-group">
+                <label>Thumbnail (URL da imagem)</label>
+                <input name="thumbnail">
+            </div>
+
+            <div class="form-group">
+                <label>Título</label>
+                <input name="titulo">
+            </div>
+
+            <div class="form-group">
+                <label>Descrição</label>
+                <input name="descricao">
+            </div>
+
+            <div class="form-group">
+                <label>URL do vídeo (YouTube)</label>
+                <input name="url">
+            </div>
+
+            <button type="submit">Adicionar vídeo</button>
+        </form>
+    </div>
+
+    <div class="footer">
+        © 2009 YouTube, LLC
+    </div>
+
+</body>
+</html>

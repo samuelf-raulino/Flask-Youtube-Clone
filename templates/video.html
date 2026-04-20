@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ conteudo[2] }} - YouTube</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f6f6f6;
+        }
+
+        /* TOPO */
+        .header {
+            background: linear-gradient(#ffffff, #e5e5e5);
+            border-bottom: 1px solid #ccc;
+            padding: 10px 20px;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #cc0000;
+            display: inline-block;
+        }
+
+        .logo span {
+            color: #000;
+        }
+
+        /* CONTEÚDO */
+        .container {
+            width: 960px;
+            margin: 20px auto;
+            background: #fff;
+            border: 1px solid #ccc;
+            padding: 15px;
+        }
+
+        .player-wrapper {
+            background: #000;
+            border: 1px solid #999;
+            padding: 5px;
+            width: 660px;
+        }
+
+        iframe {
+            border: none;
+        }
+
+        .titulo {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .descricao-box {
+            margin-top: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background: #fafafa;
+            font-size: 13px;
+        }
+
+        .descricao-box strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* RODAPÉ */
+        .footer {
+            text-align: center;
+            font-size: 11px;
+            color: #666;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="logo">
+            You<span>Tube</span>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="titulo">
+            {{ conteudo[2] }}
+        </div>
+
+        <div class="player-wrapper">
+            <iframe 
+                src="{{ link }}" 
+                width="640" 
+                height="480"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="descricao-box">
+            <strong>Descrição</strong>
+            {{ conteudo[3] }}
+        </div>
+
+    </div>
+
+    <div class="footer">
+        © 2009 YouTube, LLC
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Canal - {{ user }}</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f6f6f6;
+            color: #000;
+        }
+
+        /* TOPO */
+        .header {
+            background: linear-gradient(#ffffff, #e5e5e5);
+            border-bottom: 1px solid #ccc;
+            padding: 10px 20px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #cc0000;
+            display: inline-block;
+        }
+
+        .logo span {
+            color: #000;
+        }
+
+        .nav {
+            float: right;
+            font-size: 12px;
+            margin-top: 6px;
+        }
+
+        .nav a {
+            color: #0033cc;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+        .nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* CONTEÚDO */
+        .container {
+            width: 900px;
+            margin: 20px auto;
+            background: #fff;
+            border: 1px solid #ccc;
+            padding: 15px;
+        }
+
+        .channel-header {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .channel-name {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .edit-btn {
+            font-size: 12px;
+            border: 1px solid #666;
+            background-color: #efefef;
+            padding: 3px 8px;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+
+        .edit-btn:hover {
+            background-color: #ddd;
+        }
+
+        /* RODAPÉ */
+        .footer {
+            text-align: center;
+            font-size: 11px;
+            color: #666;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="logo">
+            You<span>Tube</span>
+        </div>
+
+        <div class="nav">
+            <a href="/">home</a>
+            <a href="/logout">sair</a>
+        </div>
+
+        <div style="clear: both;"></div>
+    </div>
+
+    <div class="container">
+
+        <div class="channel-header">
+            <div class="channel-name">
+                {{ user }}
+            </div>
+
+            {% if permissao == True %}
+                <button class="edit-btn">Editar</button>
+            {% endif %}
+        </div>
+
+        <!-- Aqui você pode listar vídeos do canal depois -->
+
+    </div>
+
+    <div class="footer">
+        © 2009 YouTube, LLC
+    </div>
+
+</body>
+</html>
